@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tasks/src/helpers/log_helper.dart';
-import 'package:tasks/src/pages/drawer_page.dart';
+import 'package:tasks/src/app/drawer/view.dart';
 import 'package:tasks/src/provider/app_provider.dart';
 
 class HomePage extends StatefulWidget {

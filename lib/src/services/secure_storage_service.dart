@@ -10,5 +10,5 @@ class SecureStorageService {
         encryptedSharedPreferences: true,
       );
 
-  static FlutterSecureStorage _storage = FlutterSecureStorage();
+  static const FlutterSecureStorage _storage = FlutterSecureStorage();
 }

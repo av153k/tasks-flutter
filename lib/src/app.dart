@@ -4,7 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tasks/src/config/themes/theme.dart';
 import 'package:tasks/src/helpers/size_config.dart';
-import 'package:tasks/src/pages/home_page.dart';
+import 'package:tasks/src/app/home/view.dart';
 import 'package:tasks/src/provider/app_provider.dart';
 import 'package:tasks/src/services/snackbar_service.dart';
 
