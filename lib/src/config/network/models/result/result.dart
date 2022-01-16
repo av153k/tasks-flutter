@@ -4,6 +4,7 @@ part 'result.freezed.dart';
 
 @freezed
 class Result<T, E extends Exception> with _$Result<T,E>{
-  const factory Result.success(T data) = _Success<T,E>;
   const factory Result.failure(E error) = _Failure<T,E>;
+
+  const factory Result.success(T data) = _Success<T,E>;
 }

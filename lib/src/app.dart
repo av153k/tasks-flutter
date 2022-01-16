@@ -39,7 +39,7 @@ class MyApp extends ConsumerWidget {
       home: Builder(builder: (context) {
         SizeConfig().init(context);
         SnackbarService.service.initialize(context, scaffoldMessengerKey!);
-        return HomePage();
+        return const HomePage();
       }),
     );
   }

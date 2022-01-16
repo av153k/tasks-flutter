@@ -6,7 +6,6 @@ part 'user.g.dart';
 
 @Freezed()
 class User extends BaseNetworkModel<User> with _$User{
-
   const factory User(
       {required String email,
       @Default('') String phone,
