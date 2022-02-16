@@ -5,9 +5,10 @@ class LocalStorageServices {
 
   static final LocalStorageServices _instance =
       LocalStorageServices._();
-  static LocalStorageServices get service => _instance;
 
   static SharedPreferences? _prefs;
+
+  static LocalStorageServices get service => _instance;
 
   SharedPreferences? get instance => _prefs;
 

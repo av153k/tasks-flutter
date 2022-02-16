@@ -6,6 +6,7 @@ import '../options/network_options.dart';
 
 class NetworkCreator {
   static NetworkCreator shared = NetworkCreator();
+
   final Dio _client = Dio();
 
   Future<Response> request(

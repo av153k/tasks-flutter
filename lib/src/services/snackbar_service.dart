@@ -1,17 +1,18 @@
 import 'dart:developer';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SnackbarService {
   SnackbarService._();
 
+  static BuildContext? _context;
+  static GlobalKey<ScaffoldMessengerState>? _scaffoldKey;
   static final SnackbarService _services = SnackbarService._();
+
   static SnackbarService get service => _services;
 
-  static GlobalKey<ScaffoldMessengerState>? _scaffoldKey;
-  static BuildContext? _context;
   GlobalKey<ScaffoldMessengerState>? get key => _scaffoldKey;
+
   initialize(BuildContext context, GlobalKey<ScaffoldMessengerState> key) {
    _scaffoldKey = key;
    _context = context;

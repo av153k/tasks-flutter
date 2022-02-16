@@ -4,9 +4,10 @@ class LogHelper {
   LogHelper._();
 
   static final LogHelper _instance = LogHelper._();
+  static Logger? _logger;
+
   static LogHelper get log => _instance;
 
-  static Logger? _logger;
   static Logger? get logger => _logger;
 
   initialize() {

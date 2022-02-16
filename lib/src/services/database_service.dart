@@ -6,9 +6,9 @@ class DatabaseServices {
   DatabaseServices._();
 
   static final DatabaseServices _instance = DatabaseServices._();
+  static Box<Task>? _taskBox;
 
   static DatabaseServices get service => _instance;
-  static Box<Task>? _taskBox;
 
   Box<Task>? get taskBox => _taskBox;
 
@@ -37,5 +37,4 @@ class DatabaseServices {
   Future<List<Task>?> getAllTasks() async{
     return _taskBox?.values.toList();
   }
-
 }
