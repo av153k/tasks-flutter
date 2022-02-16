@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:tasks/src/app/drawer/view_model.dart';
 import 'package:tasks/src/config/themes/theme.dart';
 import 'package:tasks/src/helpers/size_config.dart';
 import 'package:tasks/src/app/home/view.dart';
@@ -19,14 +20,14 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final _provider = ref.watch(appProvider);
+    final _provider = ref.watch(drawerViewModelProvider);
     return MaterialApp(
       title: 'Tasks',
       scaffoldMessengerKey: scaffoldMessengerKey,
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
       darkTheme: darkTheme,
-      themeMode: ThemeMode.dark,
+      themeMode: _provider.currentTheme,
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,

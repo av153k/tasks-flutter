@@ -1,15 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:tasks/src/app/drawer/view_model.dart';
 import 'package:tasks/src/helpers/size_config.dart';
-import 'package:tasks/src/provider/app_provider.dart';
 
 class DrawerPage extends ConsumerWidget {
   const DrawerPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final _appProvider = ref.watch(appProvider);
+    final _drawerProvider = ref.watch(drawerViewModelProvider);
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       body: SafeArea(
@@ -24,11 +24,7 @@ class DrawerPage extends ConsumerWidget {
               ),
               Text(
                 'Tasks',
-                style: TextStyle(
-                  fontSize: SizeConfig.screenHeight! * 0.05,
-                  fontWeight: FontWeight.bold,
-                  color: Theme.of(context).secondaryHeaderColor,
-                ),
+                style: Theme.of(context).textTheme.headline3
               ),
               SizedBox(
                 height: SizeConfig.screenHeight! * 0.01,
@@ -68,15 +64,12 @@ class DrawerPage extends ConsumerWidget {
                   children: <Widget>[
                     Text(
                       'App Info',
-                      style: TextStyle(
-                        fontSize: SizeConfig.screenHeight! * 0.02,
-                        color: Theme.of(context).secondaryHeaderColor,
-                      ),
+                      style: Theme.of(context).textTheme.headline4,
                     ),
                     Icon(
                       Icons.keyboard_arrow_right_sharp,
                       size: SizeConfig.screenHeight! * 0.02,
-                      color: Theme.of(context).secondaryHeaderColor,
+                      color: Theme.of(context).iconTheme.color,
                     ),
                   ],
                 ),
@@ -89,15 +82,12 @@ class DrawerPage extends ConsumerWidget {
                   children: <Widget>[
                     Text(
                       'Dark Theme',
-                      style: TextStyle(
-                        fontSize: SizeConfig.screenHeight! * 0.02,
-                        color: Theme.of(context).secondaryHeaderColor,
-                      ),
+                      style: Theme.of(context).textTheme.headline4,
                     ),
                     CupertinoSwitch(
-                      value: _appProvider.isDarkMode,
-                      onChanged: ref.read(appProvider).toggleTheme,
-                      activeColor: Theme.of(context).scaffoldBackgroundColor,
+                      value: _drawerProvider.isDark,
+                      onChanged: ref.read(drawerViewModelProvider).changeTheme,
+                      activeColor: Theme.of(context).iconTheme.color,
                     ),
                   ],
                 ),
